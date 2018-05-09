@@ -37,6 +37,8 @@ int main ()
        op=getch();
      }
 
+    //printf(cadastro[1].idade);
+
     return 0;
 
 }
