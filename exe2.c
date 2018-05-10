@@ -47,25 +47,39 @@ void insere()
 
 }
 
+int calcIdade(char nomeUser[20]){
+    for(int i=0;i<controle;i++){
+        if(cadastro[i].nome == nomeUser){
+            return 2018 - cadastro[i].anonasc;
+        }
+    }
+
+}
+
 int main ()
 {
     char op='s';//var para ler op do usu
+    char userOp, idade_calc;
+    //char ;
 
     while((op=='s')&&(controle<10))//enquanto o usu quiser e tiver espaco...
     {
-        /*
+
         switch (userOp){
         case 'a':
             insere();//chamada da funcao para inserir pessoa
 
         case 'b':
+            printf("\nDigite o nome da pessoa da qual deseja saber a idade:");
+            scanf("%s", idade_calc);
+            calcIdade(idade_calc);
 
-        case 'c':
+        //case 'c':
 
-        case 'd':
+        //case 'd':
 
-        case 'e':
-        }*/
+        //case 'e':
+        }
 
         insere();//chamada da funcao para inserir pessoa
        printf("\ndeseja continuar?(S/N)");
