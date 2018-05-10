@@ -48,31 +48,41 @@ void insere()
 }
 
 int calcIdade(char nomeUser[20]){
-    for(int i=0;i<controle;i++){
+    int i, returnVariable;
+    returnVariable = 0;
+    for(i=0;i<controle;i++){
         if(cadastro[i].nome == nomeUser){
-            return 2018 - cadastro[i].anonasc;
+            //return 2018 - cadastro[i].anonasc;
+            returnVariable = 2018 - cadastro[i].anonasc;
+            //return cadastro[i].anonasc;
         }
     }
 
+   return returnVariable;
 }
 
 int main ()
 {
     char op='s';//var para ler op do usu
-    char userOp, idade_calc;
+    char userOp, idade_calc[20];
     //char ;
 
     while((op=='s')&&(controle<10))//enquanto o usu quiser e tiver espaco...
     {
+        printf("\nMENU:\n a)Insere pessoa\n b)Calcula idade\n c)\n d)\n e)\n s)Sair\n");
+        userOp = getch();
 
         switch (userOp){
-        case 'a':
-            insere();//chamada da funcao para inserir pessoa
+            case 'a':
+                insere();//chamada da funcao para inserir pessoa
+                break;
 
-        case 'b':
-            printf("\nDigite o nome da pessoa da qual deseja saber a idade:");
-            scanf("%s", idade_calc);
-            calcIdade(idade_calc);
+            case 'b':
+                printf("\nDigite o nome da pessoa da qual deseja saber a idade:");
+                //scanf("%s", idade_calc);
+                gets(idade_calc);
+                printf("\nA idade dele eh: %d",calcIdade(idade_calc));
+                break;
 
         //case 'c':
 
@@ -81,7 +91,7 @@ int main ()
         //case 'e':
         }
 
-        insere();//chamada da funcao para inserir pessoa
+        //insere();//chamada da funcao para inserir pessoa
        printf("\ndeseja continuar?(S/N)");
        op=getch();
     }
