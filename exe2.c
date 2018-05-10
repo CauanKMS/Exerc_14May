@@ -47,10 +47,12 @@ void insere()
 
 }
 
-int calcIdade(char nomeUser[20]){
+int calcIdade(char nomeUser[]){
     int i, returnVariable;
     returnVariable = 0;
     for(i=0;i<controle;i++){
+        //printf("\nNomeStruct: %s", cadastro[i].nome);
+        //printf("\nNomeUser: %s", nomeUser);
         if(cadastro[i].nome == nomeUser){
             //return 2018 - cadastro[i].anonasc;
             returnVariable = 2018 - cadastro[i].anonasc;
@@ -81,7 +83,8 @@ int main ()
                 printf("\nDigite o nome da pessoa da qual deseja saber a idade:");
                 //scanf("%s", idade_calc);
                 gets(idade_calc);
-                printf("\nA idade dele eh: %d",calcIdade(idade_calc));
+                printf(idade_calc);
+                printf("\nA idade dele eh: %d", calcIdade(idade_calc));
                 break;
 
         //case 'c':
